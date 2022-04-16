@@ -56,3 +56,24 @@ export class AppComponent implements OnInit{
 
 }
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAh1NeStCv-pkZK21JqecNtsdxUHNaN9y8",
+  authDomain: "angular8448.firebaseapp.com",
+  projectId: "angular8448",
+  storageBucket: "angular8448.appspot.com",
+  messagingSenderId: "779505909761",
+  appId: "1:779505909761:web:6c12a6943b23a9946ac000",
+  measurementId: "G-2D9Z5CRFQ9"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
