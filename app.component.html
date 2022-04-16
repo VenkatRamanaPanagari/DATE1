@@ -1,0 +1,57 @@
+
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+    </head>
+    <body>
+        
+        
+        <div class="menu-bar">
+            <h1>Welcome to angular project</h1>
+        <h4>This website provides weather updates</h4>
+            <ul>
+                <li class="h1"><i class="fa-solid fa-house"></i><a href="#">HOME</a></li>
+                
+                <li><i class="fa-solid fa-user"></i><a href="About.html">About Us</a></li>
+                
+                <li><i class="fa-solid fa-clone"></i><a href="About.html">Our Services</a></li>
+                
+                <li><i class="fa-solid fa-users"></i><a href="#">Our Customers</a></li>
+                
+                <li><i class="fa-solid fa-phone"></i><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h1 >The current time is  {{ today | date : 'yyyy-MM-dd, h:mm:ss a' }}</h1>
+        <br> 
+        <br> 
+        <h2> The Weather in Toronto is shown below 
+        <br>
+        <br>
+        <br>
+            <div id="divWeatherMain"> 
+                <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+                    <i class="fas fa-3x fa-sun sun"></i>  
+                </div>   
+                <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+                    <i class="fas fa-3x fa-moon moon"></i>  
+                </div>   
+                <div class="weatherWidgetRow cloudDiv">
+                    <i class="fas fa-cloud fa-3x cloud"></i>
+                </div>
+                <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.temp_celcius}}°</div>
+                <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+                <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+                <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{WeatherData.name}}</div>
+                <div class="weatherWidgetRow" style="font-size: 12px;">Humidity: {{WeatherData.main.humidity}}%</div>
+            </div>
+        </h2>
+        
+        
+    </body>
+</html>
+
